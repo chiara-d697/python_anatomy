@@ -1,5 +1,13 @@
 import random
 
+def rps(user, computer):
+    if user == computer:
+        return 'Draw!'
+    elif (user == 'Scissors' and computer == 'Rock') or (user == 'Paper' and computer == 'Scissors') or (user == 'Rock' and computer == 'Paper') :
+        return 'Computer wins!'
+    else :
+        return 'You win, queen!'
+
 user_choice = str(input("Please select R, P or S:"))
 if user_choice == "R":
     user_choice_1 ="Rock"
@@ -19,12 +27,5 @@ else:
     computer_choice_1 = "Scissors"
 print("Your rival has chosen", computer_choice_1)
 
-user = user_choice_1
-computer = computer_choice_1
-if user == computer:
-    print ('Draw!')
-elif (user == 'Scissors' and computer == 'Rock') or (user == 'Paper' and computer == 'Scissors') or (
-        user == 'Rock' and computer == 'Paper'):
-    print ('Computer wins!')
-else:
-    print ('You win, queen!')
+result = rps(user_choice_1, computer_choice_1)
+print(result)
